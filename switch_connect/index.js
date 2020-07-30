@@ -1,14 +1,21 @@
-/*
-  <=====  Initialisation for the node project ===========>
-*/
+
+//NodeJS initialisation
+
 const express = require('express');
-var Telnet = require('telnet-client');
 const dotenv = require('dotenv');
 dotenv.config(); //loading .env file
-
 const port = process.env.PORT || 8000
 const app = express();
 
+app.listen(port, () => {
+  console.log(`API server port: ${port}`);
+});
+app.get('/', function(req, res) {
+  res.send(pwr);
+});
+
+//Telnet initialisation
+var Telnet = require('telnet-client');
 var connection = new Telnet();
 var params = {
   host: process.env.SWITCH_IP,
@@ -20,15 +27,39 @@ var params = {
 
 var pwr = [];
 
-app.listen(port, () => {
-  console.log(`API server port: ${port}`);
-});
-app.get('/', function(req, res) {
-  res.send(pwr);
-});
+
+//MySQL initialisation
 /*
-  <======  End initialisation ==========>
+Authentication error:
+Run Mysql in command prompt (sudo mysql)
+In Mysql query do following (be sure to use root password and root user):
+
+mysql-> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourRootPassword';
+mysql-> FLUSH PRIVILEGES;
+
+https://stackoverflow.com/a/51918364
+
+
 */
+let mysql = require('mysql');
+let sql = mysql.createConnection({
+  host     : 'localhost',
+  user     : process.env.MYSQL_USER,
+  password : process.env.MYSQL_PASSWORD
+});
+
+sql.connect(function(err) {
+  if (err) throw err;
+  console.log("MySQL Connection Successful!");
+  
+  sql.query("CREATE DATABASE " + process.env.MYSQL_DATABASE_NAME, function (err, result) {
+    if (err) {
+      console.log(process.env.MYSQL_DATABASE_NAME + ": Error while creating or database already exists.");
+    }else{
+    console.log(process.env.MYSQL_DATABASE_NAME + " : database created");
+    }
+  });
+});
 
 connection.connect(params)
 .then(() => {
@@ -71,7 +102,7 @@ connection.connect(params)
 
             // console.log("Port 1 power: " + port1.slice(15,18));       
         })
-    }, 500);
+    }, parseInt(process.env.INTERVAL));
   
 }, function(error) {
   console.log('promises reject:', error)

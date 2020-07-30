@@ -12,6 +12,11 @@ Edit the  ```.env``` file in the ```switch_connect``` folder to use the variable
 Goto ```http://localhost:8000```
 
 
+### MySQL installation
+
+Need MySQL server installed on local machine
+
+
 ### Command Line Interface (to play around switch CLI)
 
 In terminal (Most Netgear switches have a telnet server on port 60000)
