@@ -15,12 +15,16 @@ Goto ```http://localhost:8000```
 ### Command Line Interface (to play around switch CLI)
 
 In terminal (Most Netgear switches have a telnet server on port 60000)
-```telnet ip_address_of_switch port```
-```telnet 192.168.50.150 60000```
-```admin```
-```password```
-```enable``` and enter once more untill #
-```show poe port info all```
+
+```s
+telnet ip_address_of_switch port
+telnet 192.168.50.150 60000
+admin
+password
+enable
+"Enter"
+show poe port info all
+```
 
 
 ### References
