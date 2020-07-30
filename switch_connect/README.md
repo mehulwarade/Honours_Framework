@@ -28,6 +28,8 @@ show poe port info all
 
 
 ### References
+```r
 https://www.downloads.netgear.com/docs/m4100/enu/202-11161-01/cli.pdf
 https://www.simweb.ch/blog/2014/02/hidden-cli-interface-on-netgear-gs110tp/#comment-6565
 https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786 
+```
