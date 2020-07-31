@@ -13,3 +13,7 @@ npm install
 ```
 
 Edit the  ```.env``` file in the ```switch_connect``` folder to use the variables for your setup.
+
+### MySQL installation
+
+Need MySQL server installed on local machine

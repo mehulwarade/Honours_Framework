@@ -10,9 +10,8 @@ $descriptorspec = array(
 );
 
 // $ret = proc_open("node ".$nodeJsPath.' 2>&1', $descriptorspec, $pipes);
-echo(getenv('TEST'));
-echo('scshcshcsh' . $newline);
-sleep(2);
+// echo('scshcshcsh' . $newline);
+// sleep(2);
 
 //Kill all the processes for nodeJS.
 // killnode();
@@ -25,8 +24,21 @@ function killnode(){
     exec('kill ' . $nodepid); // https://stackoverflow.com/a/28045959
 }
 
+?><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FEPAC</title>
+        <meta name="author" content="Mehul Warade" />  
+    </head>
+    <body>
+    Welcome to FEPAC (framework for evaluating parallel algorithms on cluster)
+    <br>
+    Current supported algorithm language: python
+    <br>
 
+    
+    
 
-
-
-// proc_terminate($ret);
+    </body>
+</html>
