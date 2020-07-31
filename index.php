@@ -36,8 +36,6 @@ function killnode(){
     <br>
     Current supported algorithm language: python
     <br>
-
-    
     
 
     </body>
