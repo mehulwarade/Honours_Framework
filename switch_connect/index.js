@@ -6,8 +6,6 @@ const dotenv = require('dotenv');
 //https://github.com/motdotla/dotenv/issues/135#issuecomment-254211441
 dotenv.config({path: __dirname + '/.env'}); //loading .env file 
 
-
-console.log(process.env.SWITCH_IP);
 const port = process.env.PORT || 8000
 const app = express();
 
@@ -71,7 +69,7 @@ sql.query("CREATE DATABASE if not exists" + process.env.MYSQL_DATABASE_NAME, fun
 changeDB();
 
 //Check or create table
-var q = "CREATE TABLE if not exists test_single_power (timestamp BIGINT(255), description VARCHAR(255), p1 FLOAT(12), p2 FLOAT(12), p3 FLOAT(12), p4 FLOAT(12), p5 FLOAT(12), p6 FLOAT(12), p7 FLOAT(12))";
+var q = "CREATE TABLE if not exists test_single_power (timestamp BIGINT(255), p1 FLOAT(12))";
 sql.query(q, function (err, result) {
   if (err){
     console.log('Error or table already exists: Power. Continuing...');
@@ -91,27 +89,19 @@ telcon.connect(params)
     setInterval(() => {
       telcon.send('show poe port info all')
         .then(function(res) {
-          pwr[0] = "dynamic power usage (Index = port number)"
           pwr[1] = parseFloat(res.slice(1163,1223).slice(15,18))
-          pwr[2] = parseFloat(res.slice(1224,1284).slice(15,18))
-          pwr[3] = parseFloat(res.slice(1285,1345).slice(15,18))
-          pwr[4] = parseFloat(res.slice(1346,1406).slice(15,18))
-          pwr[5] = parseFloat(res.slice(1407,1467).slice(15,18))
-          pwr[6] = parseFloat(res.slice(1468,1528).slice(15,18))
-          pwr[7] = parseFloat(res.slice(1529,1589).slice(15,18))
           // console.log(pwr);   
-          console.log('Updating data...')
-          var qinsertpwr = "INSERT INTO power (timestamp, description, p1, p2, p3, p4, p5, p6, p7) VALUES ("+ Date.now()+","+"' '"+","+pwr[1]+","+pwr[2]+","+pwr[3]+","+pwr[4]+","+pwr[5]+","+pwr[6]+","+pwr[7]+")";
+          // console.log('Updating data...')
+          //Can't use anything else because the date changes in bash and nodejs (bash date 01 and nodejs 1)
+          var qinsertpwr = "INSERT INTO test_single_power (timestamp, p1) VALUES ("+ Date.now()+","+pwr[1]+")";
           // console.log(qinsertpwr);
-
+          
           sql.query(qinsertpwr, function (err, result) {
             if (err){
               console.log('Error inserting into the table');
             }else{
             console.log("Inserted successfully : Power");
           }});
-
-           
         })
     }, parseInt(process.env.INTERVAL));
 
