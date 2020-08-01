@@ -4,7 +4,8 @@ for SIZE in 36; do
 # for SIZE in 600 720 840 960; do
     echo SIZE: $SIZE
     echo SIZE: $SIZE >> results/result.log
-    date '+%Y%m%d%H%M%S' >> results/result.log
+    echo $(($(date +%s%N)/1000000))
+    echo $(($(date +%s%N)/1000000)) >> results/result.log
     echo ' ' >> results/result.log
     
     for TEST in 1 2 3; do
@@ -18,7 +19,7 @@ for SIZE in 36; do
     
     done
     echo ' ' >> results/result.log
-    date '+%Y%m%d%H%M%S' >> results/result.log
+    echo $(($(date +%s%N)/1000000)) >> results/result.log
     echo ' ' >> results/result.log
 done
 
