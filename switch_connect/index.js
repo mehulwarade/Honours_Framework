@@ -71,7 +71,7 @@ sql.query("CREATE DATABASE if not exists" + process.env.MYSQL_DATABASE_NAME, fun
 changeDB();
 
 //Check or create table
-var q = "CREATE TABLE if not exists power (timestamp BIGINT(255), description VARCHAR(255), p1 FLOAT(12), p2 FLOAT(12), p3 FLOAT(12), p4 FLOAT(12), p5 FLOAT(12), p6 FLOAT(12), p7 FLOAT(12))";
+var q = "CREATE TABLE if not exists test_single_power (timestamp BIGINT(255), description VARCHAR(255), p1 FLOAT(12), p2 FLOAT(12), p3 FLOAT(12), p4 FLOAT(12), p5 FLOAT(12), p6 FLOAT(12), p7 FLOAT(12))";
 sql.query(q, function (err, result) {
   if (err){
     console.log('Error or table already exists: Power. Continuing...');
