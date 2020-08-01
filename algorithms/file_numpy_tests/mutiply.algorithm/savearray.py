@@ -8,3 +8,5 @@ numberColumns = size
 
 np.savetxt('array1/%s.array' %size, np.random.random((size, size)))
 np.savetxt('array2/%s.array' %size, np.random.random((size, size)))
+
+haha
