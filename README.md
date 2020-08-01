@@ -17,3 +17,12 @@ Edit the  ```.env``` file in the ```switch_connect``` folder to use the variable
 ### MySQL installation
 
 Need MySQL server installed on local machine
+
+
+
+
+# On Debian (RPi)
+sudo apt-get update
+sudo apt install php
+sudo apt install mariadb-server  => sudo mysql_secure_installation
+sudo apt install npm

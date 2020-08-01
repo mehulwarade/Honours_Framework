@@ -3,7 +3,11 @@
 
 const express = require('express');
 const dotenv = require('dotenv');
-dotenv.config(); //loading .env file
+//https://github.com/motdotla/dotenv/issues/135#issuecomment-254211441
+dotenv.config({path: __dirname + '/.env'}); //loading .env file 
+
+
+console.log(process.env.SWITCH_IP);
 const port = process.env.PORT || 8000
 const app = express();
 
@@ -27,14 +31,14 @@ var params = {
 
 var pwr = [];
 
-
 //MySQL initialisation
 /*
 Authentication error:
 Run Mysql in command prompt (sudo mysql)
-In Mysql query do following (be sure to use root password and root user):
+In Mysql query do following (be sure to use password set while setup and root user):
 
-mysql-> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourRootPassword';
+mysql(MAC)-> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password';
+MariaDB(RPi)-> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password';
 mysql-> FLUSH PRIVILEGES;
 
 https://stackoverflow.com/a/51918364
@@ -55,11 +59,11 @@ sql.connect(function(err) {
 });
 
 //Checking databases
-sql.query("CREATE DATABASE " + process.env.MYSQL_DATABASE_NAME, function (err, result) {
+sql.query("CREATE DATABASE if not exists" + process.env.MYSQL_DATABASE_NAME, function (err, result) {
   if (err) {
     console.log(process.env.MYSQL_DATABASE_NAME + ": Error or database already exists. Continuing...");
   }else{
-  console.log(process.env.MYSQL_DATABASE_NAME + " : database created");
+  console.log(process.env.MYSQL_DATABASE_NAME + " : database connected.");
   }
 });
 
@@ -67,18 +71,17 @@ sql.query("CREATE DATABASE " + process.env.MYSQL_DATABASE_NAME, function (err, r
 changeDB();
 
 //Check or create table
-var q = "CREATE TABLE power (timestamp BIGINT(255), description VARCHAR(255), p1 FLOAT(12), p2 FLOAT(12), p3 FLOAT(12), p4 FLOAT(12), p5 FLOAT(12), p6 FLOAT(12), p7 FLOAT(12))";
+var q = "CREATE TABLE if not exists power (timestamp BIGINT(255), description VARCHAR(255), p1 FLOAT(12), p2 FLOAT(12), p3 FLOAT(12), p4 FLOAT(12), p5 FLOAT(12), p6 FLOAT(12), p7 FLOAT(12))";
 sql.query(q, function (err, result) {
   if (err){
     console.log('Error or table already exists: Power. Continuing...');
   }else{
-  console.log("Table created : Power");
+  console.log("Power: Table connected.");
 }});
-
-// console.log(sql.query('show tables'));
 
 telcon.connect(params)
 .then(() => {
+  console.log('telnet connect enter');
   //Following functionality only works for NETGEAR ProSAFE GS110TP switches.
   telcon.send(process.env.LOGIN)
   telcon.send(process.env.PASSWORD)
@@ -111,12 +114,10 @@ telcon.connect(params)
            
         })
     }, parseInt(process.env.INTERVAL));
-  
-}, function(error) {
-  console.log('promises reject:', error)
+
 })
 .catch(function(error) {
-  // handle the throw (timeout)
+  console.log('Connection to switch error' + error);
 })
 
 
