@@ -1,3 +1,7 @@
 /tests/switch_telnet_connect/working_nodejs/api/node_modules
 /tests/switch_telnet_connect/working_nodejs/web/node_modules
 /switch_connect/node_modules
+/algorithms/test_numpy_pwr/arrays/array1/7080.array
+/algorithms/test_numpy_pwr/arrays/array1/9960.array
+/algorithms/test_numpy_pwr/arrays/array2/7080.array
+/algorithms/test_numpy_pwr/arrays/array2/9960.array
