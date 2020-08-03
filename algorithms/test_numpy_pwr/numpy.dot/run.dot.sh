@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for SIZE in 7080; do
+for SIZE in 3000; do
     echo SIZE: $SIZE
     echo SIZE: $SIZE >> results/result.log
 
