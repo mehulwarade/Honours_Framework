@@ -95,7 +95,7 @@ sql.query(q, function (err, result) {
   if (err){
     console.log('Error or table already exists: Power. Continuing...');
   }else{
-  console.log("Power: Table connected.");
+  console.log(process.env.MYSQL_TABLE_NAME+ " : Table connected.");
 }});
 
 telcon.connect(params)
