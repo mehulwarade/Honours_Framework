@@ -62,8 +62,8 @@ mysql -u root -p mytestdb -e "select * from test_single_power where timestamp be
 mysql -u root -p mytestdb -e "select * from test_single_power"
 
 
-
 */
+
 let mysql = require('mysql');
 let sql = mysql.createConnection({
   host     : 'localhost',
