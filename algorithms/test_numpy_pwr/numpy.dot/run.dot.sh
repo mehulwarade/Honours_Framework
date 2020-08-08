@@ -1,22 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
-for SIZE in 3000; do
-    echo SIZE: $SIZE
-    echo SIZE: $SIZE >> results/result.log
+echo SIZE: $1
+echo SIZE: $1 >> results/result.log
 
-    #https://stackoverflow.com/a/16548827
+#https://stackoverflow.com/a/16548827
 
-    echo $(($(date +%s%N)/1000000)) >> results/result.log
-    echo ' ' >> results/result.log
+echo $(($(date +%s%N)/1000000)) >> results/result.log
+echo ' ' >> results/result.log
 
-    sleep 5
-    echo Starting
-    python3 dot.py $SIZE >> results/result.log
-    echo End
-    sleep 5
-    
-    echo ' ' >> results/result.log
-    echo $(($(date +%s%N)/1000000)) >> results/result.log
-    echo ' ' >> results/result.log
-done
+sleep 5
+echo Starting
+python3 dot.py $1 >> results/result.log
+echo End
+sleep 5
+
+echo ' ' >> results/result.log
+echo $(($(date +%s%N)/1000000)) >> results/result.log
+echo ' ' >> results/result.log
 
