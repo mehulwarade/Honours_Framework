@@ -1,6 +1,7 @@
 {
+    "_comment": "comment text goes here...",
     "app": {
-        "port": 3000
+        "port": 2000
     },
     "db": {
         "host": "localhost",
