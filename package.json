@@ -1,0 +1,26 @@
+{
+  "name": "honours_framework",
+  "version": "1.0.0",
+  "description": "Framework for evaluation of parallel algorithms on clusters",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehulwarade/Honours_Framework.git"
+  },
+  "author": "Mehul Warade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehulwarade/Honours_Framework/issues"
+  },
+  "homepage": "https://github.com/mehulwarade/Honours_Framework#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "nodemon": "^2.0.4"
+  }
+}
