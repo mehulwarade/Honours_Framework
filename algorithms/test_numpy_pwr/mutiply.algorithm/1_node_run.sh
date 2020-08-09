@@ -3,7 +3,7 @@
 echo Size: $1
 echo SIZE: $1 >> results/result.cl.log
 
-for THREAD in 2 3;do
+for THREAD in 5;do
     #https://stackoverflow.com/a/16548827
 	
 	echo THREAD: $THREAD
@@ -13,7 +13,7 @@ for THREAD in 2 3;do
     
     sleep 0.5
     echo Starting
-   	mpirun -np $THREAD python3 matrixmultiplication.py $1 >> results/result.cl.log
+   	mpirun -np $THREAD -hostfile hostfile python3 matrixmultiplication.py $1 >> results/result.cl.log
     echo End
     sleep 0.5
 

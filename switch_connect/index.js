@@ -22,9 +22,9 @@ var telcon = new Telnet();
 var params = {
   host: process.env.SWITCH_IP,
   port: process.env.SWITCH_TELNET_PORT,
-  shellPrompt: process.env.PROMPT_1,
+  shellPrompt: '/:~[^$]*\$\s*$/',
   timeout: parseInt(process.env.TIMEOUT),
-  shellPrompt: process.env.PROMPT_2,
+  shellPrompt: '.',
 }
 
 var pwr = [];
