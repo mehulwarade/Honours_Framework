@@ -1,11 +1,19 @@
 {
-    "_comment": "comment text goes here...",
+    "__comment": "Configuration file for FEPAC",
     "app": {
-        "port": 2000
+        "port": 8000
+    },
+    "switch_telnet": {
+        "port": 60000,
+        "login": "admin",
+        "password": "password",
+        "interval_to_call": 1000
     },
     "db": {
         "host": "localhost",
-        "port": 27017,
-        "name": "ydb"
+        "user": "root",
+        "password": "qazwsxedc",
+        "db_name": "mytestdb",
+        "table_name": "cl_3000_single_node_thread_2"
     }
 }
