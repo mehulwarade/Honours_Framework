@@ -6,9 +6,9 @@ import sys
 
 size = int( sys.argv[1])
 
-A = np.loadtxt('../%s.1.array' %size, dtype='uint8')
+A = np.loadtxt('../arrays/%s.1.array' %size, dtype='uint8')
 
-B = np.loadtxt('../%s.2.array' %size, dtype='uint8')
+B = np.loadtxt('../arrays/%s.2.array' %size, dtype='uint8')
 
 t = time()
 np.dot(A, B)
