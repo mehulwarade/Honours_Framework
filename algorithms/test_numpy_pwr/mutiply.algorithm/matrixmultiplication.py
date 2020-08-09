@@ -10,8 +10,8 @@ size = int(sys.argv[1])
 TaskMaster = 0
 
 #print ("Initialising variables.\n")
-a = np.loadtxt('../%s.1.array' %size, dtype='uint8')
-b = np.loadtxt('../%s.2.array' %size, dtype='uint8')
+a = np.loadtxt('../arrays/%s.1.array' %size, dtype='uint8')
+b = np.loadtxt('../arrays/%s.2.array' %size, dtype='uint8')
 c = np.zeros(shape=(size), dtype='uint8')
 
 comm = MPI.COMM_WORLD

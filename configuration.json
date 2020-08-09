@@ -1,15 +1,18 @@
 {
     "__comment": "Configuration file for FEPAC",
     "app": {
+        "__comment": "NodeJS code",
         "port": 8000
     },
     "switch_telnet": {
+        "__comment": "Telent credentials for connecting to Netgear Switch GS110TP",
         "port": 60000,
         "login": "admin",
         "password": "password",
         "interval_to_call": 1000
     },
     "db": {
+        "__comment": "Local mysql database credentials",
         "host": "localhost",
         "user": "root",
         "password": "qazwsxedc",
