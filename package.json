@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/mehulwarade/Honours_Framework#readme",
   "dependencies": {
-    "nodemon": "^2.0.4"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "telnet-client": "^1.4.5"
   }
 }
