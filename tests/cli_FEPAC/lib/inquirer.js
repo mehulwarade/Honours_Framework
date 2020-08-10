@@ -20,7 +20,7 @@ module.exports = {
     ask_mysql: () => {
 
         msg = `\nWelcome to MySQL admin.\nPlease check the details and choose your options:\nDB host: ${global_env.db.host}\nDB user: ${global_env.db.user}\nDB name: ${global_env.db.db_name}\n`
-
+        // Add support to check tables and work with them.
         return inquirer.prompt({
             type: 'rawlist',
             name: 'res',
