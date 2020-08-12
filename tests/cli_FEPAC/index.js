@@ -36,20 +36,8 @@ const run = async () => {
             const ask_mysql = await inquirer.ask_mysql();
 
             if (ask_mysql.res == 'Test connection') {
-
-                await functions.spinnerStart('Testing connection to mysql server...');
-
                 mysql.db_connect((res) => {
-                    if (res) {
-                        console.log(chalk.green('Connection Successfull!'));
-                        functions.spinnerStop();
-                        run();
-                    }
-                    else {
-                        console.log(chalk.red('Connection to Mysql server failed.'));
-                        functions.spinnerStop();
-                        process.exit();
-                    }
+                    run();
                 });
             }
             else if (ask_mysql.res == 'Show password') {
@@ -66,19 +54,8 @@ const run = async () => {
 
             if (ask_telnet.res == 'Test connection') {
 
-                await functions.spinnerStart('Testing connection to telnet server...');
-
                 telnet.telnet_connect((res) => {
-                    if (res) {
-                        console.log(chalk.green('Connection Successfull!'));
-                        functions.spinnerStop();
-                        run();
-                    }
-                    else {
-                        console.log(chalk.red('Connection to Telnet server failed.'));
-                        functions.spinnerStop();
-                        process.exit();
-                    }
+                    run();
                 });
             }
             else if (ask_telnet.res == 'Show password') {
@@ -89,7 +66,7 @@ const run = async () => {
                 run();
             }
         }
-        else {
+        else if (ask_main.res == 'Run FEPAC') {
             console.log('error');
         }
         // console.log(chalk.green('All done!'));

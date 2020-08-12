@@ -1,4 +1,5 @@
 const functions = require('./methods');
+const chalk = require('chalk');
 
 var config_path = functions.getConfigPath(); /* Always put this after declaring functions */
 global_env = require(config_path);
@@ -44,6 +45,8 @@ sql = mysql.createConnection({
 
 module.exports = {
     db_connect: async (callback) => {
+        await functions.spinnerStart('Testing connection to mysql server...');
+        
         /* This following is to simulate 1 second delay to show the spinner */
         /* return sql   <- Also works */
         /* Callback info: https://stackoverflow.com/a/23340273 */
@@ -52,11 +55,13 @@ module.exports = {
 
         await sql.connect(function (err) {
             if (err) {
-                // console.log(chalk.red('Connection to Mysql server failed.'));
-                return callback(false);
+                console.log(chalk.red('Connection to Mysql server failed.'));
+                functions.spinnerStop();
+                process.exit();
             }
             else {
-                // console.log(chalk.green('Connection Successfull!'));
+                console.log(chalk.green('MySQL connection successfull!'));
+                functions.spinnerStop();
                 return callback(true);
             }
         });
