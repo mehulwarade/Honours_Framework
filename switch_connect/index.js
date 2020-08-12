@@ -90,7 +90,7 @@ sql.query("CREATE DATABASE if not exists" + process.env.MYSQL_DATABASE_NAME, fun
 changeDB();
 
 //Check or create table
-var q = "CREATE TABLE if not exists " + process.env.MYSQL_TABLE_NAME + " (timestamp BIGINT(255), p1 FLOAT(12))";
+var q = "CREATE TABLE if not exists " + process.env.MYSQL_TABLE_NAME + " (timestamp BIGINT(255), p1 FLOAT(12), p2 FLOAT(12))";
 sql.query(q, function (err, result) {
   if (err){
     console.log('Error or table already exists: Power. Continuing...');
@@ -111,10 +111,11 @@ telcon.connect(params)
       telcon.send('show poe port info all')
         .then(function(res) {
           pwr[1] = parseFloat(res.slice(1163,1223).slice(15,18))
+          pwr[2] = parseFloat(res.slice(1224,1284).slice(15,18))
           console.log(pwr);  
           // console.log('Updating data...')
           //Can't use anything else because the date changes in bash and nodejs (bash date 01 and nodejs 1)
-          var qinsertpwr = "INSERT INTO " + process.env.MYSQL_TABLE_NAME + " (timestamp, p1) VALUES ("+ Date.now()+","+pwr[1]+")";
+          var qinsertpwr = "INSERT INTO " + process.env.MYSQL_TABLE_NAME + " (timestamp, p1, p2) VALUES ("+ Date.now()+","+pwr[1]+","+pwr[2]+")";
           // console.log(qinsertpwr);
           
           sql.query(qinsertpwr, function (err, result) {
