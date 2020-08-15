@@ -73,6 +73,9 @@ const fepac = async () => {
     else if (ask_fepac.res == 'Stop mysql insert') {
         await telnet.stop_telnet();
     }
+    else if (ask_fepac.res == 'Get avg') {
+        await mysql.save_avg_data('cl_480_2_node_full','p1',1597202902173, 1597202912173);
+    }
     else if (ask_fepac.res == 'Go Back') {
         run();
     }

@@ -1,0 +1,34 @@
+{
+  "planet": "Earth",
+  "city.name": "anytown",
+  "name": {
+    "first": "Johnny",
+    "last": "B."
+  },
+  "is_student": false,
+  "a": {
+    "new": {
+      "field": {
+        "as": {
+          "object": {
+            "hello": "world"
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "new": {
+      "field": {
+        "as": {
+          "object": {
+            "hello": "world"
+          },
+          "objesct": {
+            "hello": "worsld"
+          }
+        }
+      }
+    }
+  }
+}
