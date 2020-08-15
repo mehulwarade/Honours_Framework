@@ -18,7 +18,6 @@ comm = MPI.COMM_WORLD
 worldSize = comm.Get_size()
 rank = comm.Get_rank()
 processorName = MPI.Get_processor_name()
-
 #Calculate the slice per worker
 if (worldSize == 1):
     slice = size
