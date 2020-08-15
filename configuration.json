@@ -18,7 +18,7 @@
         "user": "root",
         "password": "qazwsxedc",
         "db_name": "mytestdb",
-        "table_name": "cl_3000_single_node_thread_2"
+        "table_name": "test"
     },
     "algorithm": {
         "__comment1": "Details of algorithm to be run. Path should be relative.",
