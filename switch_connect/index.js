@@ -90,7 +90,7 @@ sql.query("CREATE DATABASE if not exists" + process.env.MYSQL_DATABASE_NAME, fun
 changeDB();
 
 //Check or create table
-var q = "CREATE TABLE if not exists " + process.env.MYSQL_TABLE_NAME + " (timestamp BIGINT(255), p1 FLOAT(12), p2 FLOAT(12))";
+var q = "CREATE TABLE if not exists " + process.env.MYSQL_TABLE_NAME + " (timestamp BIGINT(255), description VARCHAR(255), p1 FLOAT(12), p2 FLOAT(12), p3 FLOAT(12), p4 FLOAT(12), p5 FLOAT(12), p6 FLOAT(12), p7 FLOAT(12))";
 sql.query(q, function (err, result) {
   if (err){
     console.log('Error or table already exists: Power. Continuing...');
@@ -112,10 +112,15 @@ telcon.connect(params)
         .then(function(res) {
           pwr[1] = parseFloat(res.slice(1163,1223).slice(15,18))
           pwr[2] = parseFloat(res.slice(1224,1284).slice(15,18))
-          console.log(pwr);  
+          pwr[3] = parseFloat(res.slice(1285,1345).slice(15,18))
+          pwr[4] = parseFloat(res.slice(1346,1406).slice(15,18))
+          pwr[5] = parseFloat(res.slice(1407,1467).slice(15,18))
+          pwr[6] = parseFloat(res.slice(1468,1528).slice(15,18))
+          pwr[7] = parseFloat(res.slice(1529,1589).slice(15,18))
+          // console.log(pwr);  
           // console.log('Updating data...')
           //Can't use anything else because the date changes in bash and nodejs (bash date 01 and nodejs 1)
-          var qinsertpwr = "INSERT INTO " + process.env.MYSQL_TABLE_NAME + " (timestamp, p1, p2) VALUES ("+ Date.now()+","+pwr[1]+","+pwr[2]+")";
+          var qinsertpwr = "INSERT INTO " + process.env.MYSQL_TABLE_NAME + " (timestamp, description, p1, p2, p3, p4, p5, p6, p7) VALUES ("+ Date.now()+","+"' '"+","+pwr[1]+","+pwr[2]+","+pwr[3]+","+pwr[4]+","+pwr[5]+","+pwr[6]+","+pwr[7]+")";
           // console.log(qinsertpwr);
           
           sql.query(qinsertpwr, function (err, result) {
