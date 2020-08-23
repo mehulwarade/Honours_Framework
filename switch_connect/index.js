@@ -120,7 +120,7 @@ telcon.connect(params)
           pwr[5] = parseFloat(res.slice(1407,1467).slice(15,18))
           pwr[6] = parseFloat(res.slice(1468,1528).slice(15,18))
           pwr[7] = parseFloat(res.slice(1529,1589).slice(15,18))
-          // console.log(pwr);   
+          console.log(pwr);   
           console.log('Updating data...')
           var qinsertpwr = "INSERT INTO " + process.env.MYSQL_TABLE_NAME + " (timestamp, description, p1, p2, p3, p4, p5, p6, p7) VALUES ("+ Date.now()+","+"' '"+","+pwr[1]+","+pwr[2]+","+pwr[3]+","+pwr[4]+","+pwr[5]+","+pwr[6]+","+pwr[7]+")";
           // console.log(qinsertpwr);
