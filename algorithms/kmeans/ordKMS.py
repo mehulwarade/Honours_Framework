@@ -29,8 +29,8 @@ num_clusters = input()
 num_clusters = int(num_clusters)
 start_time = time.time()
 with open('3D_spatial_network.csv','rb') as f:
-    reader = csv.reader(f)
-    data = list(reader)
+	reader = csv.reader(f)
+	data = list(reader)
 
 data.pop(0)
 for i in range (len(data)):

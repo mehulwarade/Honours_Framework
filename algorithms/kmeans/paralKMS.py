@@ -1,3 +1,4 @@
+# https://github.com/asarbaev/Parallel-implementation-of-k-means-
 import math
 import csv
 import time
