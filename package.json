@@ -10,8 +10,10 @@
     "start": "nodemon index.js"
   },
   "nodemonConfig": {
-    "__comment" : "Use to ignore monitoring of certain files: https://stackoverflow.com/a/50303181",
-    "ignore": ["logs/data.json"]
+    "__comment": "Use to ignore monitoring of certain files: https://stackoverflow.com/a/50303181",
+    "ignore": [
+      "logs/data.json"
+    ]
   },
   "repository": {
     "type": "git",
