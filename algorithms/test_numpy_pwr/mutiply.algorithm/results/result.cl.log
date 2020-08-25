@@ -82,3 +82,862 @@ THREAD: 2
  
 cl_480_2_node_full p1 1597203784621 1597204311400 2
 cl_480_2_node_full p2 1597203784621 1597204311400 2
+
+=======full big======
+SIZE: 480
+ 
+NODE: 2
+ 
+THREAD: 1
+ 
+1597504175263
+702.4945828914642
+1597504883638
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597504175278 and 1597504883656;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597504175278 and 1597504883656;
+THREAD: 2
+ 
+1597504888737
+269.7434470653534
+1597505164839
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597504888746 and 1597505164852;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597504888746 and 1597505164852;
+THREAD: 3
+ 
+1597505169915
+219.5143609046936
+1597505397708
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597505169924 and 1597505397722;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597505169924 and 1597505397722;
+THREAD: 4
+ 
+1597505402814
+182.58941650390625
+1597505594448
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597505402830 and 1597505594464;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597505402830 and 1597505594464;
+THREAD: 5
+ 
+1597505599533
+190.4231400489807
+1597505800708
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597505599543 and 1597505800723;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597505599543 and 1597505800723;
+NODE: 3
+ 
+THREAD: 1
+ 
+1597505805814
+361.0365300178528
+1597506195871
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597505805823 and 1597506195884;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597505805823 and 1597506195884;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597505805823 and 1597506195884;
+THREAD: 2
+ 
+1597506200949
+167.55095314979553
+1597506375821
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597506200958 and 1597506375835;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597506200958 and 1597506375835;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597506200958 and 1597506375835;
+THREAD: 3
+ 
+1597506380903
+139.26468777656555
+1597506528774
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597506380913 and 1597506528787;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597506380913 and 1597506528787;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597506380913 and 1597506528787;
+THREAD: 4
+ 
+1597506533853
+119.54510140419006
+1597506662000
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597506533862 and 1597506662013;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597506533862 and 1597506662013;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597506533862 and 1597506662013;
+THREAD: 5
+ 
+1597506667080
+120.72263050079346
+1597506798946
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597506667089 and 1597506798960;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597506667089 and 1597506798960;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597506667089 and 1597506798960;
+ 
+SIZE: 480
+ 
+NODE: 4
+ 
+THREAD: 1
+ 
+1597508427511
+231.7488751411438
+1597508675695
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597508427526 and 1597508675706;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597508427526 and 1597508675706;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597508427526 and 1597508675706;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597508427526 and 1597508675706;
+THREAD: 2
+ 
+1597508680761
+112.4759430885315
+1597508800054
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597508680770 and 1597508800066;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597508680770 and 1597508800066;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597508680770 and 1597508800066;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597508680770 and 1597508800066;
+THREAD: 3
+ 
+1597508805126
+90.83863377571106
+1597508903653
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597508805135 and 1597508903668;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597508805135 and 1597508903668;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597508805135 and 1597508903668;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597508805135 and 1597508903668;
+THREAD: 4
+ 
+1597508908735
+79.93261194229126
+1597508998641
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597508908746 and 1597508998654;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597508908746 and 1597508998654;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597508908746 and 1597508998654;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597508908746 and 1597508998654;
+THREAD: 5
+ 
+1597509003718
+84.40261721611023
+1597509098907
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597509003749 and 1597509098920;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597509003749 and 1597509098920;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597509003749 and 1597509098920;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597509003749 and 1597509098920;
+
+NODE: 5
+ 
+THREAD: 1
+ 
+1597560087760
+176.0554702281952
+1597560277824
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597560087770 and 1597560277836;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597560087770 and 1597560277836;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597560087770 and 1597560277836;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597560087770 and 1597560277836;
+SELECT avg(p5) from power_4_node_all where timestamp between 1597560087770 and 1597560277836;
+ 
+SIZE: 480
+ 
+ 
+NODE: 5
+ 
+THREAD: 2
+ 
+1597562426717
+80.81650972366333
+1597562514665
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597562426726 and 1597562514676;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597562426726 and 1597562514676;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597562426726 and 1597562514676;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597562426726 and 1597562514676;
+SELECT avg(p5) from power_4_node_all where timestamp between 1597562426726 and 1597562514676;
+
+SIZE: 480
+ 
+ 
+NODE: 6
+ 
+THREAD: 1
+ 
+1597564166633
+142.8807327747345
+1597564343030
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597564166649 and 1597564343046;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597564166649 and 1597564343046;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597564166649 and 1597564343046;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597564166649 and 1597564343046;
+SELECT avg(p5) from power_4_node_all where timestamp between 1597564166649 and 1597564343046;
+SELECT avg(p6) from power_4_node_all where timestamp between 1597564166649 and 1597564343046;
+THREAD: 2
+ 
+1597564348109
+75.06861639022827
+1597564429897
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597564348118 and 1597564429910;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597564348118 and 1597564429910;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597564348118 and 1597564429910;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597564348118 and 1597564429910;
+SELECT avg(p5) from power_4_node_all where timestamp between 1597564348118 and 1597564429910;
+SELECT avg(p6) from power_4_node_all where timestamp between 1597564348118 and 1597564429910;
+ 
+SIZE: 480
+ 
+ 
+NODE: 7
+ 
+THREAD: 1
+ 
+1597564688265
+114.8355700969696
+1597564836533
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+SELECT avg(p5) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+SELECT avg(p6) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+SELECT avg(p7) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+
+THREAD: 2
+ 
+1597564841624
+65.135666847229
+1597564914880
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1597564841633 and 1597564914892;
+SELECT avg(p2) from power_4_node_all where timestamp between 1597564841633 and 1597564914892;
+SELECT avg(p3) from power_4_node_all where timestamp between 1597564841633 and 1597564914892;
+SELECT avg(p4) from power_4_node_all where timestamp between 1597564841633 and 1597564914892;
+SELECT avg(p5) from power_4_node_all where timestamp between 1597564841633 and 1597564914892;
+SELECT avg(p6) from power_4_node_all where timestamp between 1597564841633 and 1597564914892;
+SELECT avg(p7) from power_4_node_all where timestamp between 1597564688275 and 1597564836545;
+ 
+
+SIZE: 480
+ 
+ 
+NODE: 5
+ 
+THREAD: 3
+ 
+1598187559831
+61.09942960739136
+1598187630180
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598187559839 and 1598187630191;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598187559839 and 1598187630191;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598187559839 and 1598187630191;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598187559839 and 1598187630191;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598187559839 and 1598187630191;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598187559839 and 1598187630191;
+THREAD: 4
+ 
+1598187635241
+71.28104019165039
+1598187715041
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598187635250 and 1598187715052;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598187635250 and 1598187715052;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598187635250 and 1598187715052;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598187635250 and 1598187715052;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598187635250 and 1598187715052;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598187635250 and 1598187715052;
+THREAD: 5
+ 
+1598187720104
+78.22874212265015
+1598187812283
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598187720113 and 1598187812294;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598187720113 and 1598187812294;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598187720113 and 1598187812294;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598187720113 and 1598187812294;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598187720113 and 1598187812294;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598187720113 and 1598187812294;
+ 
+NODE: 6
+ 
+THREAD: 3
+ 
+1598187817369
+62.81029939651489
+1598187890925
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598187817384 and 1598187890937;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598187817384 and 1598187890937;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598187817384 and 1598187890937;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598187817384 and 1598187890937;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598187817384 and 1598187890937;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598187817384 and 1598187890937;
+THREAD: 4
+ 
+1598187895990
+63.74275779724121
+1598187969466
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598187895998 and 1598187969479;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598187895998 and 1598187969479;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598187895998 and 1598187969479;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598187895998 and 1598187969479;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598187895998 and 1598187969479;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598187895998 and 1598187969479;
+THREAD: 5
+ 
+1598187974529
+66.96281957626343
+1598188055105
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598187974538 and 1598188055120;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598187974538 and 1598188055120;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598187974538 and 1598188055120;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598187974538 and 1598188055120;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598187974538 and 1598188055120;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598187974538 and 1598188055120;
+ 
+NODE: 7
+ 
+THREAD: 3
+ 
+1598188060197
+59.73652410507202
+1598188129444
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598188060206 and 1598188129456;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598188060206 and 1598188129456;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598188060206 and 1598188129456;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598188060206 and 1598188129456;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598188060206 and 1598188129456;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598188060206 and 1598188129456;
+ 
+ 
+SIZE: 480
+ 
+==============xx============
+NODE: 2
+ 
+THREAD: 6
+ 
+1598334813594
+136.90617156028748
+1598334962227
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598334813604 and 1598334962241;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598334813604 and 1598334962241;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598334813604 and 1598334962241;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598334813604 and 1598334962241;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598334813604 and 1598334962241;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598334813604 and 1598334962241;
+THREAD: 7
+ 
+1598334967304
+166.2000994682312
+1598335146776
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598334967313 and 1598335146792;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598334967313 and 1598335146792;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598334967313 and 1598335146792;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598334967313 and 1598335146792;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598334967313 and 1598335146792;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598334967313 and 1598335146792;
+THREAD: 8
+ 
+1598335151855
+180.31595373153687
+1598335347074
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598335151865 and 1598335347089;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598335151865 and 1598335347089;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598335151865 and 1598335347089;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598335151865 and 1598335347089;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598335151865 and 1598335347089;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598335151865 and 1598335347089;
+THREAD: 9
+ 
+1598335352155
+184.51534032821655
+1598335554284
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598335352165 and 1598335554297;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598335352165 and 1598335554297;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598335352165 and 1598335554297;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598335352165 and 1598335554297;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598335352165 and 1598335554297;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598335352165 and 1598335554297;
+THREAD: 10
+ 
+1598335559356
+182.10338401794434
+1598335761216
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598335559366 and 1598335761231;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598335559366 and 1598335761231;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598335559366 and 1598335761231;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598335559366 and 1598335761231;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598335559366 and 1598335761231;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598335559366 and 1598335761231;
+THREAD: 11
+ 
+1598335766321
+181.42030119895935
+1598335969637
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598335766331 and 1598335969653;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598335766331 and 1598335969653;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598335766331 and 1598335969653;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598335766331 and 1598335969653;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598335766331 and 1598335969653;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598335766331 and 1598335969653;
+THREAD: 12
+ 
+1598335974718
+178.01052260398865
+1598336175898
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598335974728 and 1598336175912;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598335974728 and 1598336175912;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598335974728 and 1598336175912;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598335974728 and 1598336175912;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598335974728 and 1598336175912;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598335974728 and 1598336175912;
+ 
+NODE: 3
+
+mysql -u root -p mytestdb -ss -e "SELECT avg($clm) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;SELECT avg($clm) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;SELECT avg($clm) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;SELECT avg($clm) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;SELECT avg($clm) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;SELECT avg($clm) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;SELECT avg($clm) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;SELECT avg($clm) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;"
+
+
+THREAD: 6
+ 
+1598336180997
+135.0210361480713
+1598336330428
+
+SELECT avg(p1) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598336181007 and 1598336330445;
+THREAD: 7
+ 
+1598336335507
+123.41812014579773
+1598336474670
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598336335516 and 1598336474683;
+THREAD: 8
+ 
+1598336479743
+118.2466835975647
+1598336613771
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598336479752 and 1598336613786;
+THREAD: 9
+ 
+1598336618850
+123.44518613815308
+1598336760007
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598336618860 and 1598336760022;
+THREAD: 10
+ 
+1598336765086
+123.17620253562927
+1598336909819
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598336765096 and 1598336909834;
+THREAD: 11
+ 
+1598336914897
+124.30895709991455
+1598337060944
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598336914906 and 1598337060959;
+THREAD: 12
+ 
+1598337066023
+119.27681374549866
+1598337209661
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337066033 and 1598337209675;
+ 
+NODE: 4
+
+mysql -u root -p mytestdb -ss -e "SELECT avg($clm) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;SELECT avg($clm) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;SELECT avg($clm) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;SELECT avg($clm) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;SELECT avg($clm) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;SELECT avg($clm) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;"
+
+THREAD: 6
+ 
+1598337214760
+90.986576795578
+1598337320794
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337214770 and 1598337320809;
+THREAD: 7
+ 
+1598337325885
+92.71759796142578
+1598337433653
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337325895 and 1598337433673;
+THREAD: 8
+ 
+1598337438755
+96.02329587936401
+1598337552828
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337438764 and 1598337552844;
+THREAD: 9
+ 
+1598337557906
+97.43222045898438
+1598337674048
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337557916 and 1598337674062;
+THREAD: 10
+ 
+1598337679124
+96.81535649299622
+1598337919252
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337798666 and 1598337919266;
+THREAD: 12
+ 
+1598337924329
+99.43717551231384
+1598338050025
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598337924339 and 1598338050040;
+ 
+
+ 
+SIZE: 480
+mysql -u root -p mytestdb -ss -e "SELECT avg(p1) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;SELECT avg(p2) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;SELECT avg(p3) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;SELECT avg(p4) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;SELECT avg(p5) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;SELECT avg(p6) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;"
+ 
+NODE: 4
+ 
+THREAD: 11
+ 
+1598339359494
+90.41106414794922
+1598339470650
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598339359504 and 1598339470665;
+ 
+SIZE: 480
+ 
+ 
+NODE: 5
+ 
+THREAD: 6
+ 
+1598340746304
+102.7414128780365
+1598340867291
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598340746313 and 1598340867302;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598340746313 and 1598340867302;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598340746313 and 1598340867302;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598340746313 and 1598340867302;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598340746313 and 1598340867302;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598340746313 and 1598340867302;
+THREAD: 7
+ 
+1598340872353
+109.10241389274597
+1598341001670
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598340872361 and 1598341001682;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598340872361 and 1598341001682;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598340872361 and 1598341001682;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598340872361 and 1598341001682;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598340872361 and 1598341001682;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598340872361 and 1598341001682;
+THREAD: 8
+ 
+1598341006735
+108.05021810531616
+1598341138126
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341006743 and 1598341138140;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341006743 and 1598341138140;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341006743 and 1598341138140;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341006743 and 1598341138140;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341006743 and 1598341138140;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341006743 and 1598341138140;
+THREAD: 9
+ 
+1598341143189
+108.79503035545349
+1598341279033
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341143196 and 1598341279046;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341143196 and 1598341279046;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341143196 and 1598341279046;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341143196 and 1598341279046;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341143196 and 1598341279046;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341143196 and 1598341279046;
+THREAD: 10
+ 
+1598341284130
+110.64563941955566
+1598341424511
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341284141 and 1598341424524;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341284141 and 1598341424524;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341284141 and 1598341424524;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341284141 and 1598341424524;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341284141 and 1598341424524;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341284141 and 1598341424524;
+THREAD: 11
+ 
+1598341429594
+108.89701819419861
+1598341572134
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341429602 and 1598341572147;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341429602 and 1598341572147;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341429602 and 1598341572147;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341429602 and 1598341572147;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341429602 and 1598341572147;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341429602 and 1598341572147;
+THREAD: 12
+ 
+1598341577203
+117.19127106666565
+1598341730020
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341577212 and 1598341730032;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341577212 and 1598341730032;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341577212 and 1598341730032;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341577212 and 1598341730032;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341577212 and 1598341730032;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341577212 and 1598341730032;
+ 
+NODE: 6
+ 
+THREAD: 6
+ 
+1598341735104
+90.79474425315857
+1598341845214
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341735115 and 1598341845228;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341735115 and 1598341845228;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341735115 and 1598341845228;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341735115 and 1598341845228;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341735115 and 1598341845228;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341735115 and 1598341845228;
+THREAD: 7
+ 
+1598341850287
+95.45834517478943
+1598341968150
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341850301 and 1598341968162;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341850301 and 1598341968162;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341850301 and 1598341968162;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341850301 and 1598341968162;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341850301 and 1598341968162;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341850301 and 1598341968162;
+THREAD: 8
+ 
+1598341973218
+97.16851663589478
+1598342096304
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598341973226 and 1598342096319;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598341973226 and 1598342096319;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598341973226 and 1598342096319;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598341973226 and 1598342096319;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598341973226 and 1598342096319;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598341973226 and 1598342096319;
+THREAD: 9
+ 
+1598342101376
+103.1186318397522
+1598342233538
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598342101391 and 1598342233550;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598342101391 and 1598342233550;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598342101391 and 1598342233550;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598342101391 and 1598342233550;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598342101391 and 1598342233550;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598342101391 and 1598342233550;
+THREAD: 10
+ 
+1598342238603
+96.5671534538269
+1598342365478
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598342238614 and 1598342365492;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598342238614 and 1598342365492;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598342238614 and 1598342365492;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598342238614 and 1598342365492;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598342238614 and 1598342365492;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598342238614 and 1598342365492;
+THREAD: 11
+ 
+1598342370551
+100.3223397731781
+1598342506264
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598342370559 and 1598342506277;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598342370559 and 1598342506277;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598342370559 and 1598342506277;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598342370559 and 1598342506277;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598342370559 and 1598342506277;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598342370559 and 1598342506277;
+THREAD: 12
+ 
+1598342511336
+91.89637064933777
+1598342640454
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598342511351 and 1598342640467;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598342511351 and 1598342640467;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598342511351 and 1598342640467;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598342511351 and 1598342640467;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598342511351 and 1598342640467;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598342511351 and 1598342640467;
+
+
+===========XXXXXX=========================== 
+SIZE: 480
+ 
+ 
+NODE: 2
+ 
+THREAD: 6
+ 
+1598351116456
+160.91222381591797
+1598351287987
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598351116464 and 1598351287999;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598351116464 and 1598351287999;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598351116464 and 1598351287999;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598351116464 and 1598351287999;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598351116464 and 1598351287999;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598351116464 and 1598351287999;
+ 
+NODE: 3
+ 
+THREAD: 6
+ 
+1598351293072
+118.17230248451233
+1598351423321
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598351293080 and 1598351423334;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598351293080 and 1598351423334;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598351293080 and 1598351423334;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598351293080 and 1598351423334;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598351293080 and 1598351423334;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598351293080 and 1598351423334;
+ 
+NODE: 5
+ 
+THREAD: 6
+ 
+1598351428408
+107.521719455719
+1598351553657
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598351428417 and 1598351553669;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598351428417 and 1598351553669;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598351428417 and 1598351553669;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598351428417 and 1598351553669;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598351428417 and 1598351553669;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598351428417 and 1598351553669;
+ 
+NODE: 6
+ 
+THREAD: 6
+ 
+1598351558755
+95.46474957466125
+1598351672811
+ 
+SELECT avg(p1) from power_4_node_all where timestamp between 1598351558763 and 1598351672829;
+SELECT avg(p2) from power_4_node_all where timestamp between 1598351558763 and 1598351672829;
+SELECT avg(p3) from power_4_node_all where timestamp between 1598351558763 and 1598351672829;
+SELECT avg(p4) from power_4_node_all where timestamp between 1598351558763 and 1598351672829;
+SELECT avg(p5) from power_4_node_all where timestamp between 1598351558763 and 1598351672829;
+SELECT avg(p6) from power_4_node_all where timestamp between 1598351558763 and 1598351672829;
