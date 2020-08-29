@@ -6,10 +6,23 @@ import sys
 import numpy as np
 import collections
 from mpi4py import MPI
-# from sklearn.cluster import KMeans
-# from sklearn.metrics.cluster import adjusted_rand_score
+
+comm = MPI.COMM_WORLD
+size = comm.Get_size()
+rank = comm.Get_rank()
 
 
+global dimensions, num_clusters, num_points,dimensions,data,flag
+
+f  = open('3D_spatial_network.csv', "rt", encoding="utf8")
+reader = csv.reader(f)
+data = list(reader)
+	
+data.pop(0)
+for i in range (len(data)):
+	data[i].pop(0)
+data=data[0:1000]
+data=np.array(data).astype(np.float)
 
 #===================================================Devide data set to further scattering=====================
 def chunkIt(seq, num):
@@ -27,35 +40,19 @@ def addCounter(counter1, counter2, datatype):
         counter1[item] += counter2[item]
     return counter1
 
-comm = MPI.COMM_WORLD
-size = comm.Get_size()
-rank = comm.Get_rank()
-global dimensions, num_clusters, num_points,dimensions,data,flag
 num_clusters=0
 
-
-if rank==0: 													#master part
-	#===============================================reading and preparing data set======================
-
+print('X')
+if rank==0:
+	print('A')
 	num_clusters = int(sys.argv[1])
 	start_time = time.time() 										#turn on a timer which allows us to estimate performane of this algorithm
-
-	f  = open('3D_spatial_network.csv', "rt", encoding="utf8")
-	reader = csv.reader(f)
-	data = list(reader)
-		
-	data.pop(0)
-	for i in range (len(data)):
-		data[i].pop(0)
-	# should be divisible by 2,3,4,5
-	data=data[0:1440]
-	data=np.array(data).astype(np.float)
-
-	#================================================Initialize centroids matrix=========================
 	initial=[]
 	for i in range(num_clusters):
 		initial.append(data[i])
 	initial=np.vstack(initial)
+	print(initial)
+	print('B')
 	#====================================================================================================
 
 	num_points = len(data)                                    #number of rows
@@ -65,8 +62,11 @@ if rank==0: 													#master part
 	#for i, chunk in enumerate(data):
 	#	chunks[i % size].append(chunk)
 	chunks=chunkIt(data,size)								  #deviding data set on parts for further scattering
-	#====================================================================================================
+	print('C')
+	# comm.Barrier()
+ #====================================================================================================
 else:														  #workers part
+	print('D')
 	chunks = None											  #initilize variable
 	initial = None											  #initilize variable
 	data = None											      #initilize variable
@@ -85,6 +85,7 @@ num_clusters=comm.bcast(num_clusters,root=0)
 initial=comm.bcast(initial, root = 0)						  #send centroid matrix to the workers
 flag= True
 while flag==True:
+	print('E')
 	clusters=[]											  		  #initilize variable
 	cluster=[]
 	#print str(rank) + ': ' + str(data)
@@ -95,52 +96,63 @@ while flag==True:
 	for j in range(len(initial)):
 		for i in range(len(data)):
 			dist[i][j]=np.linalg.norm(initial[j]-data[i])
-	#print('rank',rank,dist)		
+	# print('rank',rank,dist)		
 	#===================================Initilize lable for each sample in each process======================
 	for i in range (len(dist)):										#iterable take each raw in dist matrix and 
 		clusters.append(np.argmin(dist[i])+1)                       #find column index of min value (this index is number of centorud)
-	#print(clusters)
+	# print(clusters)
 	#===================================Calculating the number of samples in each cluster====================
 	Q_clusts=collections.Counter(clusters)							
 	#Q_clusts=np.array((collections.Counter(clusters).keys(),collections.Counter(clusters).values()))# what is the labels was faced in each process and their frequency 
 	#===================================Summing the number of samples for each cluster=======================
+	# print(addCounter)
 	counterSumOp = MPI.Op.Create(addCounter, commute=True)
-
+	# print(counterSumOp)
 	totcounter = comm.allreduce(Q_clusts, op=counterSumOp)
+	# print(totcounter)
 	comm.Barrier()
 	#print ('Q',Q_clusts)
 	#print('T',totcounter)
 	#=========================================================================================================
 	#====================================From each worker we gather cluster vector and join them ============
 	cluster=comm.gather(clusters, root=0)
+	print(cluster)
+	print('zzzzzzzzzzzzzzzzzzzzzzz')
 	#data=comm.gather(data,root=0)
 	comm.Barrier()
 	#print('cl1',cluster)
 	#==========================================================================================================
 	if rank==0:
+		print('ahahahahahahahhahahahahahahahahahaha')
 		cluster=[item for sublist in cluster for item in sublist]
+	#	data = [item.tolist() for item in data]
+	#	data=[item for sublist in data for item in sublist]
+	#	print(data)
+	#	print(cluster)
 
 	centroids=np.zeros((len(initial),len(initial[0])))
 	for k in range (1,num_clusters+1):
 		indices = [i for i, j in enumerate(clusters) if j == k]
+		#print('ind',indices)        
+		#print(k,  [data[i] for i in indices] )
+		#print('sum',np.sum([data[i] for i in indices], axis=0 ))
+		#print('div',np.divide((np.sum([data[i] for i in indices], axis=0)).astype(np.float),totcounter[k]))
 		centroids[k-1]=np.divide((np.sum([data[i] for i in indices], axis=0)).astype(np.float),totcounter[k])
 
 	centroid=comm.allreduce(centroids,MPI.SUM)
 	comm.Barrier()
+	#print('centroids',centroids)
+	#print ('initial', initial)
+	#print('centroid',centroid)
 		
-	
+	print('aaaaaaaaaaaaaaaaaaaaaaaaaa')
 	if np.all(centroid==initial):
 		flag=False
-		# print ("%s" % (time.time() - start_time))
-		# print ("Execution time %s seconds" % (time.time() - start_time))
+		print ("Execution time %s seconds" % (time.time() - start_time))
 		
 	else:
 	#	print ('initial after', initial)
+		print('xxxxxxxxxxxxxxxxxx')
 		initial= centroid 
 	comm.Barrier()
-
-
-
-			
-
-		
+	

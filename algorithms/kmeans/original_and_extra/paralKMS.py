@@ -36,10 +36,19 @@ num_clusters=0
 
 if rank==0: 													#master part
 	#===============================================reading and preparing data set======================
-
+	
+	# print("Enter the number of clusters you want to make: ")
+	# num_clusters = input()
+	# num_clusters = int(num_clusters)
 	num_clusters = int(sys.argv[1])
 	start_time = time.time() 										#turn on a timer which allows us to estimate performane of this algorithm
 
+	# ORIGINAL CODE NOT WORKING.
+	# with open('3D_spatial_network.csv','rb') as f:
+	#     reader = csv.reader(f)
+	#     data = list(reader)	
+
+	#CHANGED WITH THE FOLLOWING
 	f  = open('3D_spatial_network.csv', "rt", encoding="utf8")
 	reader = csv.reader(f)
 	data = list(reader)
@@ -47,9 +56,13 @@ if rank==0: 													#master part
 	data.pop(0)
 	for i in range (len(data)):
 		data[i].pop(0)
-	# should be divisible by 2,3,4,5
-	data=data[0:1440]
+	data=data[0:100]
 	data=np.array(data).astype(np.float)
+
+	# kmeans = KMeans(n_clusters=num_clusters, random_state=0).fit(data).labels_
+# 	print('data',[ data[i] for i in [indices] ])
+# 	data=np.array ([[2,10],[2,5],[8,4],[5,8],[7,5],[6,4],[1,2],[4,9]])
+	#====================================================================================================
 
 	#================================================Initialize centroids matrix=========================
 	initial=[]
@@ -119,25 +132,41 @@ while flag==True:
 	#==========================================================================================================
 	if rank==0:
 		cluster=[item for sublist in cluster for item in sublist]
+	#	data = [item.tolist() for item in data]
+	#	data=[item for sublist in data for item in sublist]
+	#	print(data)
+	#	print(cluster)
 
 	centroids=np.zeros((len(initial),len(initial[0])))
 	for k in range (1,num_clusters+1):
 		indices = [i for i, j in enumerate(clusters) if j == k]
+		#print('ind',indices)        
+		#print(k,  [data[i] for i in indices] )
+		#print('sum',np.sum([data[i] for i in indices], axis=0 ))
+		#print('div',np.divide((np.sum([data[i] for i in indices], axis=0)).astype(np.float),totcounter[k]))
 		centroids[k-1]=np.divide((np.sum([data[i] for i in indices], axis=0)).astype(np.float),totcounter[k])
 
 	centroid=comm.allreduce(centroids,MPI.SUM)
 	comm.Barrier()
+	#print('centroids',centroids)
+	#print ('initial', initial)
+	#print('centroid',centroid)
 		
 	
 	if np.all(centroid==initial):
 		flag=False
-		# print ("%s" % (time.time() - start_time))
-		# print ("Execution time %s seconds" % (time.time() - start_time))
+		print ("Execution time %s seconds" % (time.time() - start_time))
 		
 	else:
 	#	print ('initial after', initial)
 		initial= centroid 
 	comm.Barrier()
+
+
+# if rank==0:
+#	print('final clust vect',cluster)
+#	print('libkms clust vect',kmeans)
+	# print('adjusted_rand_score',adjusted_rand_score(kmeans,cluster))
 
 
 
