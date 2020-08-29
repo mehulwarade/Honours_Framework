@@ -18,7 +18,7 @@
         "user": "root",
         "password": "qazwsxedc",
         "db_name": "mytestdb",
-        "table_name": "test"
+        "table_name": "kmeans"
     },
     "algorithm": {
         "__comment1": "Details of algorithm to be run. Path should be relative.",
