@@ -21,14 +21,7 @@ Need MySQL server installed on local machine
 
 
 
-# On Debian (RPi)
-sudo apt-get update
-<!-- sudo apt install php -->
-sudo apt install mariadb-server  => sudo mysql_secure_installation
-sudo apt install npm (sudo apt install nodejs npm => node -v)
-
-
-# Running from scratch:
+# Running from scratch (Debian 10):
 ### RPi netboot. (location: /nfs/client/home/pi/** <= so that its accessible to other nodes =>)
 `sudo apt-get update`
 
