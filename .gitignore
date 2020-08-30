@@ -3,3 +3,5 @@
 /switch_connect/node_modules
 # /algorithms/test_numpy_pwr/arrays/array1/7080.array
 # /algorithms/test_numpy_pwr/arrays/array2/7080.array
+node_modules
+*tif
