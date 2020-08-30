@@ -6,6 +6,7 @@ const functions = require('./lib/methods');
 const inquirer = require('./lib/inquirer');
 const mysql = require('./lib/mysql');
 const telnet = require('./lib/telnet');
+const running_algo = require('./lib/run_algo');
 
 var config_path = functions.getConfigPath(); /* Always put this after declaring functions */
 
@@ -109,25 +110,25 @@ const algo_run = async () => {
         process.exit();
     }
     else{
-        //Checking for the algorithm details.
-        await functions.spinnerStart('Checking pre-requisites for ' + ask_run_algo.res);
-        await functions.delay(1000);
-        if(functions.directoryExists(global_env.algorithm[ask_run_algo.res].file_path) && functions.directoryExists(global_env.algorithm.hostfile_folder)){
-            console.log(chalk.green('\nAlgorithm and hostfiles exists'))
-            await functions.spinnerStop();
-            algo_run();
+        try {
+
+            if (!await running_algo.check(ask_run_algo.res)) {
+                // If checking details returns => not found then run again
+                algo_run();
+            }
+            else{
+                console.log(chalk.green(`${ask_run_algo.res} algorithm finished with no errors.`))
+                console.log(chalk.green('Thank you for using FEPAC'))
+                process.exit();
+            }
         }
-        else{
-            console.log(chalk.red('\nAlgorithm or the hostfiles not found. Check configuration file'))
-            await functions.spinnerStop();
-            algo_run();
+    
+        catch (err) {
+            console.log('errrorrrroro');
+            console.log(chalk.red(err));
         }
-        // https://stackoverflow.com/a/54222450
-        // console.log(ask_run_algo.res);
-        // console.log(global_env.algorithm[ask_run_algo.res]);
     }
 
 }
-
 
 run();

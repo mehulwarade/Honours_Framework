@@ -2,11 +2,12 @@
     "__comment": "Configuration file for FEPAC",
     "app": {
         "__comment": "NodeJS code",
-        "port": 8000
+        "port": 8000,
+        "master_node_ip": "192.168.50.220"
     },
     "switch_telnet": {
         "__comment": "Telent credentials for connecting to Netgear Switch GS110TP",
-        "IP":"192.168.50.150",
+        "IP": "192.168.50.150",
         "port": 60000,
         "login": "admin",
         "password": "password",
@@ -21,24 +22,24 @@
         "table_name": "cl_480_2_node_full"
     },
     "algorithm": {
-        "hostfile_folder":"algorithms/hostfile",
-        "matrix_multiplication":{
+        "hostfile_folder": "algorithms/hostfile",
+        "matrix_multiplication": {
             "__comment": "All paths should be relative.",
             "language": "python3",
             "dependency": "mpi4py numpy openMPI",
             "file_path": "algorithms/matrix_multiplication/matrixmultiplication.py"
         },
-        "kmeans":{
+        "kmeans": {
             "__comment": "All paths should be relative.",
             "language": "python3",
             "dependency": "mpi4py numpy openMPI",
             "file_path": "algorithms/kmeans/paralKMS.py"
         },
-        "OpenCV":{
+        "OpenCV": {
             "__comment": "All paths should be relative.",
             "language": "python3",
             "dependency": "mpi4py numpy openMPI",
             "file_path": "algorithms/python_opencv/opencv.py"
-        }  
+        }
     }
 }
