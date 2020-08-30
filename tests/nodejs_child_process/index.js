@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 // const { exec } = require('child_process');
 var mp='mpi'
-const ls = spawn('ssh', ['pimaster', `cd ${mp} && mpirun -np 4 python3 helloworld.py`]);
+const ls = spawn('ssh', ['master', `cd ${mp} && mpirun -np 4 python3 helloworld.py`]);
 // const lsa = spawn('ls', ['-lh', '/usr']);
 
 ls.stdout.on('data', (data) => {

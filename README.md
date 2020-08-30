@@ -26,6 +26,9 @@ Need MySQL server installed on local machine
 `sudo apt-get update`
 
 `sudo apt install npm`
+
+<!-- Only if needed -->
+`sudo apt install nodejs`
     `=> node -v`
 
 `sudo apt install mariadb-server`
