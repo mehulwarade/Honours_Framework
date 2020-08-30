@@ -19,7 +19,7 @@ row = None
 clm = None
 
 if rank == 0:
-        img = cv2.imread("heic1502a.tif",0)
+        img = cv2.imread("heic1502a_120mb.tif",0)
         a = np.array(img)  #Convert to a Matrix
         row = a.shape[0]
         clm = a.shape[1]
@@ -50,4 +50,4 @@ star_count_node = ((200 < img_node_thresh)).sum()
 comm.Reduce(star_count_node,total,op=MPI.SUM,root=0) # Reduce to zero process
 
 if comm.rank == 0:
-        print (" Total Stars ", total)
+        # print (" Total Stars ", total)
