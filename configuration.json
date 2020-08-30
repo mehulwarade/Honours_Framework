@@ -18,16 +18,27 @@
         "user": "root",
         "password": "qazwsxedc",
         "db_name": "mytestdb",
-        "table_name": "opencv"
+        "table_name": "cl_480_2_node_full"
     },
     "algorithm": {
-        "__comment1": "Details of algorithm to be run. Path should be relative.",
-        "language": "python3",
-        "dependency": "mpi4py numpy openMPI",
-        "__comment2": "Path should be relative.",
-        "file_path": "algorithms/test_numpy_pwr/numpy.dot/dot.py",
-        "__comment3": "Maximum number should include master + slave nodes",
-        "maximum_nodes_available": 7,
-        "maximum_threads_on_each_node": 4
+        "hostfile_folder":"algorithms/hostfile",
+        "matrix_multiplication":{
+            "__comment": "All paths should be relative.",
+            "language": "python3",
+            "dependency": "mpi4py numpy openMPI",
+            "file_path": "algorithms/matrix_multiplication/matrixmultiplication.py"
+        },
+        "kmeans":{
+            "__comment": "All paths should be relative.",
+            "language": "python3",
+            "dependency": "mpi4py numpy openMPI",
+            "file_path": "algorithms/kmeans/paralKMS.py"
+        },
+        "OpenCV":{
+            "__comment": "All paths should be relative.",
+            "language": "python3",
+            "dependency": "mpi4py numpy openMPI",
+            "file_path": "algorithms/python_opencv/opencv.py"
+        }  
     }
 }

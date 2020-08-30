@@ -22,6 +22,11 @@ console.log(
 if (functions.directoryExists(config_path)) {
     // console.log(chalk.green('Configuration file found.'));
     var global_env = require(config_path);
+    var datajson = require(process.cwd() + '/logs/data.json');
+
+    // console.log(datajson.cl_480_2_node_full.p1.timestamp);
+    // // https://stackoverflow.com/a/54222450
+    // console.log(datajson[global_env.db.table_name].p1.timestamp);
 }
 else {
     console.log(chalk.red('Configuration file does not exists at ' + config_path));
@@ -30,6 +35,7 @@ else {
 
 const run = async () => {
     try {
+        
         const ask_main = await inquirer.ask_main();
 
         if (ask_main.res == 'Test MySQL connection') {
@@ -76,13 +82,52 @@ const fepac = async () => {
     else if (ask_fepac.res == 'Get avg') {
         await mysql.save_avg_data('cl_480_2_node_full','p1',1597202902173, 1597202912173);
     }
+    else if (ask_fepac.res == 'Run algorithm') {
+        algo_run();
+        
+    }
     else if (ask_fepac.res == 'Go Back') {
         run();
+    }
+    else if(ask_fepac.res == 'Exit'){
+        console.log(chalk.green('Thank you for using FEPAC'))
+        process.exit();
     }
     
 
 
 };
+
+const algo_run = async () => {
+    const ask_run_algo = await inquirer.ask_run_algo();
+
+    if (ask_run_algo.res == 'Go Back') {
+        fepac();
+    }
+    else if(ask_run_algo.res == 'Exit'){
+        console.log(chalk.green('Thank you for using FEPAC'))
+        process.exit();
+    }
+    else{
+        //Checking for the algorithm details.
+        await functions.spinnerStart('Checking pre-requisites for ' + ask_run_algo.res);
+        await functions.delay(1000);
+        if(functions.directoryExists(global_env.algorithm[ask_run_algo.res].file_path) && functions.directoryExists(global_env.algorithm.hostfile_folder)){
+            console.log(chalk.green('\nAlgorithm and hostfiles exists'))
+            await functions.spinnerStop();
+            algo_run();
+        }
+        else{
+            console.log(chalk.red('\nAlgorithm or the hostfiles not found. Check configuration file'))
+            await functions.spinnerStop();
+            algo_run();
+        }
+        // https://stackoverflow.com/a/54222450
+        // console.log(ask_run_algo.res);
+        // console.log(global_env.algorithm[ask_run_algo.res]);
+    }
+
+}
 
 
 run();
