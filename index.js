@@ -11,6 +11,7 @@ const inquirer = require('./lib/inquirer');
 const mysql = require('./lib/mysql');
 const telnet = require('./lib/telnet');
 const running_algo = require('./lib/run_algo');
+const graph = require('./lib/graph');
 
 var config_path = functions.getConfigPath(); /* Always put this after declaring functions */
 
@@ -106,6 +107,28 @@ const fepac = async () => {
     }
     else if (ask_fepac.res == 'Run algorithm') {
         algo_run(); 
+    }
+    else if (ask_fepac.res == 'Generate graph') {
+        const algo_list = await inquirer.ask_run_algo();
+
+        if (algo_list.res == 'Go Back') {
+            fepac();
+        }
+        else if(algo_list.res == 'Exit'){
+            console.log(chalk.green('Thank you for using FEPAC'))
+            process.exit();
+        }
+        else{
+            try {
+                await graph.generate_graph(algo_list.res,(res) => {
+                    console.log(res);
+                });
+            }
+            catch (err) {
+                console.log('errro');
+                console.log(chalk.red(err));
+            }
+        }
     }
     else if (ask_fepac.res == 'Go Back') {
         run();

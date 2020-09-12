@@ -12,7 +12,8 @@
   "nodemonConfig": {
     "__comment": "Use to ignore monitoring of certain files: https://stackoverflow.com/a/50303181",
     "ignore": [
-      "logs/*.json", "algorithms/opencv_hash/images_hash/*"
+      "logs/*.json",
+      "algorithms/opencv_hash/images_hash/*"
     ]
   },
   "repository": {
@@ -35,6 +36,7 @@
     "inquirer": "^7.3.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
+    "plotly": "^1.0.6",
     "telnet-client": "^1.4.5"
   }
 }
