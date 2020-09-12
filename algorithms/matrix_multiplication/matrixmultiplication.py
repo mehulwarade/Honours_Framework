@@ -5,13 +5,15 @@ import sys
 import numpy as np
 np.seterr(over='ignore') #Suppresses the warning like the 'RuntimeWarning: overflow encountered in ubyte_scalars'
 from time import time
-
-size = int(sys.argv[1])
+import os
+thisdirname = os.path.dirname(os.path.abspath(__file__))
+# size = int(sys.argv[1])
+size = 36
 TaskMaster = 0
 
 #print ("Initialising variables.\n")
-a = np.loadtxt('../arrays/%s.1.array' %size, dtype='uint8')
-b = np.loadtxt('../arrays/%s.2.array' %size, dtype='uint8')
+a = np.loadtxt(os.path.join(thisdirname,'arrays/%s.1.array' %size), dtype='uint8')
+b = np.loadtxt(os.path.join(thisdirname,'arrays/%s.1.array' %size), dtype='uint8')
 c = np.zeros(shape=(size), dtype='uint8')
 
 comm = MPI.COMM_WORLD
@@ -94,6 +96,7 @@ if rank == TaskMaster:
     # print (kl)  
     
     delta = time() - t
+    # print('Start: %d End: %d Total: %d'%(t,time(),delta))
     print(delta) 
 
     del a, b, c

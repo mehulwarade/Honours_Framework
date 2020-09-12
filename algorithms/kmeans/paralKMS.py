@@ -50,7 +50,13 @@ if rank==0: 													#master part
 	# should be divisible by 2,3,4,5
 	data=data[0:1440]
 	data=np.array(data).astype(np.float)
+	
+	# print(data)
+	# print(data.itemsize)
+	# print(data.nbytes)
+	# print(data.size)
 
+	# print(exit())
 	#================================================Initialize centroids matrix=========================
 	initial=[]
 	for i in range(num_clusters):

@@ -12,7 +12,7 @@
   "nodemonConfig": {
     "__comment": "Use to ignore monitoring of certain files: https://stackoverflow.com/a/50303181",
     "ignore": [
-      "logs/data.json"
+      "logs/*.json", "algorithms/opencv_hash/images_hash/*"
     ]
   },
   "repository": {

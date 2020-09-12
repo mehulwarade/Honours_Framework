@@ -6,7 +6,7 @@
 
 
 import numpy as np
-import cv2
+# import cv2
 from mpi4py import MPI
 import os
 thisdirname = os.path.dirname(os.path.abspath(__file__))
@@ -16,8 +16,8 @@ rank = comm.Get_rank()
 size = comm.Get_size()
 a = np.empty(([0]),dtype='uint8')
 
-fname="120mb.bin"
-row, clm = (10000, 3197)
+fname="15mb.bin"
+row, clm = (1279, 4000)
 
 # 120mb array size (10000, 3197) Stars seq  21512963 par => 21512963
 # 15mb qarray size (1279, 4000) Stars seq  2286663 par =>  2286679
@@ -27,34 +27,31 @@ if rank == 0:
         # a = np.loadtxt(os.path.join(thisdirname,fname), dtype='uint8')
 
         a = np.memmap(os.path.join(thisdirname,fname), dtype='uint8', mode='r', shape=(row, clm))
-
+    
         t2 = MPI.Wtime()
         print (" Time taken to open and read the image is : %r sec " %(t2-t1))
-
-        # row = a.shape[0]
-        # clm = a.shape[1]
 
         test_chunks = np.array_split(a,size,axis=0)
 else:
         test_chunks = None
 
-# row = comm.bcast(row, root=0)
-# clm = comm.bcast(clm, root=0)
+# comm.Barrier()
 
 w1 = MPI.Wtime()
-total = np.array([0])
+
 test_chunk = comm.scatter(test_chunks,root=0)
 
-#image processing
-img_node_thresh =  cv2.adaptiveThreshold(test_chunk,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,59,0)
+# print(test_chunk)
 
-star_count_node = ((200 < img_node_thresh)).sum()
-print (" Star count at Rank", rank,"is ", star_count_node)
+fshift = np.fft.fftshift(np.fft.fft2(test_chunk))
 
-comm.Reduce(star_count_node,total,op=MPI.SUM,root=0) # Reduce to zero process
+print(fshift.shape)
+magnitude_spectrum = 20*np.log(np.abs(fshift))
+
+print (" Magnitude array shape at Rank", rank,"is ", magnitude_spectrum.shape)
 
 if comm.rank == 0:
         w2 = MPI.Wtime()
-        print (" Total Stars ", total)
+        print (" Total Magtitude ", magnitude_spectrum.shape)
         print (" Total time taken", w2-w1 ,"sec")
         del a

@@ -1,10 +1,10 @@
 #!/bin/bash
-for NODE in 2;do
+for NODE in 3 4 5;do
     echo ' ' >> log.log
     echo NODE: $NODE
     echo NODE: $NODE >> log.log
     echo ' ' >> log.log
-    for THREAD in 2;do
+    for THREAD in 1 2 3 4 5 6 7 8;do
         #https://stackoverflow.com/a/16548827
         echo 'sleeping for 5 sec'
         sleep 5

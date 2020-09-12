@@ -1,20 +1,20 @@
 #!/bin/bash
-for NODE in 1;do
+for NODE in 3;do
     satval=$(($(date +%s%N)/1000000))
     echo ' ' >> log.log
     echo NODE: $NODE
     echo NODE: $NODE >> log.log
     echo ' ' >> log.log
-    for THREAD in 2 3 4 5 6 7 8 9 10 11 12;do
+    for THREAD in 9 10;do
         #https://stackoverflow.com/a/16548827
         echo 'sleeping for 5 sec'
         sleep 5
 
         echo THREAD: $THREAD
-        echo THREAD: $THREAD >> log.log
+        # echo THREAD: $THREAD >> log.log
         echo ' ' >> log.log
         stval=$(($(date +%s%N)/1000000))
-        echo $stval >> log.log
+        # echo $stval >> log.log
         
         # startvalue=$(expr $(($(date +%s%N)/1000000)) - 120000)
 
@@ -24,13 +24,21 @@ for NODE in 1;do
 
         # endvalue=$(expr $(($(date +%s%N)/1000000)) + 120000)
         endval=$(($(date +%s%N)/1000000))
-        echo $(expr $endval - $stval) >> log.log
-        echo $endval >> log.log
+        # echo $(expr $endval - $stval) >> log.log
+        # echo $endval >> log.log
         
-        echo ' ' >> log.log
+        # echo ' ' >> log.log
         # echo kmeans p1 $startvalue $endvalue $THREAD >> log.log
 
-        echo mysql -u root -pqazwsxedc mytestdb -ss -e '"SELECT avg(p1) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p2) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p3) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p4) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p5) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p6) from kmeans where timestamp between '$stval' and '$endval';"' >> log.log
-        echo ' ' >> log.log
+        # echo mysql -u root -pqazwsxedc mytestdb -ss -e '"SELECT avg(p1) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p2) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p3) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p4) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p5) from kmeans where timestamp between '$stval' and '$endval';SELECT avg(p6) from kmeans where timestamp between '$stval' and '$endval';"' >> log.log
+
+        echo "\"$THREAD\":{\"timestamp\":{\"start\":\"$stval\",\"end\":\"$endval\"}}," >> log.log
+    #      "1": {
+    #     "timestamp": {
+    #       "start": "1599013463658",
+    #       "end": "1599013478073"
+    #     }
+    #   },
+        #echo ' ' >> log.log
     done
 done

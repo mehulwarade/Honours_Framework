@@ -1,9 +1,16 @@
 {
     "__comment": "Configuration file for FEPAC",
     "app": {
-        "__comment": "NodeJS code",
+        "__comment1": "NodeJS code",
         "port": 8000,
-        "master_node_ip": "192.168.50.220"
+        "master_node_ip": "192.168.50.220",
+        "folder_location_on_nodes": "~/Honours_Framework",
+        "max_nodes": 6,
+        "max_threads": 8,
+        "__comment2":"Following is used for testing purposes. Fill this to overwrite the data file usage. Default: Name of algorithm.",
+        "data_file":null,
+        "start_node":null,
+        "start_thread":null
     },
     "switch_telnet": {
         "__comment": "Telent credentials for connecting to Netgear Switch GS110TP",
@@ -18,28 +25,33 @@
         "host": "localhost",
         "user": "root",
         "password": "qazwsxedc",
-        "db_name": "mytestdb",
-        "table_name": "cl_480_2_node_full"
+        "db_name": "mytestdb"
     },
     "algorithm": {
         "hostfile_folder": "algorithms/hostfile",
         "matrix_multiplication": {
-            "__comment": "All paths should be relative.",
+            "__comment": "All paths should be relative. Create a data file by algorithm name at /logs/*.json",
             "language": "python3",
             "dependency": "mpi4py numpy openMPI",
             "file_path": "algorithms/matrix_multiplication/matrixmultiplication.py"
         },
         "kmeans": {
-            "__comment": "All paths should be relative.",
+            "__comment": "All paths should be relative. Create a data file by algorithm name at /logs/*.json",
             "language": "python3",
             "dependency": "mpi4py numpy openMPI",
             "file_path": "algorithms/kmeans/paralKMS.py"
         },
         "OpenCV": {
-            "__comment": "All paths should be relative.",
+            "__comment": "All paths should be relative. Create a data file by algorithm name at /logs/*.json",
             "language": "python3",
             "dependency": "mpi4py numpy openMPI",
             "file_path": "algorithms/python_opencv/opencv.py"
+        },
+        "opencv_hash": {
+            "__comment": "All paths should be relative. Create a data file by algorithm name at /logs/*.json",
+            "language": "python3",
+            "dependency": "mpi4py numpy openMPI",
+            "file_path": "algorithms/opencv_hash/cv_hash.py"
         }
     }
 }
