@@ -8,7 +8,7 @@ from time import time
 import os
 thisdirname = os.path.dirname(os.path.abspath(__file__))
 # size = int(sys.argv[1])
-size = 36
+size = 240
 TaskMaster = 0
 
 #print ("Initialising variables.\n")
@@ -97,7 +97,7 @@ if rank == TaskMaster:
     
     delta = time() - t
     # print('Start: %d End: %d Total: %d'%(t,time(),delta))
-    print(delta) 
+    print(delta)
 
     del a, b, c
 

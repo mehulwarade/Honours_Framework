@@ -66,7 +66,7 @@ if rank == 0:
 
 	test_chunks = np.array_split(img_path,size)
 	t2 = datetime.now()
-	print ("Time taken to create image path list is : %r sec " %(t2-t1).total_seconds())
+	# print ("Time taken to create image path list is : %r sec " %(t2-t1).total_seconds())
 
 else:
     test_chunks = None

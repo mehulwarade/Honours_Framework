@@ -16,8 +16,10 @@ rank = comm.Get_rank()
 size = comm.Get_size()
 a = np.empty(([0]),dtype='uint8')
 
-fname="15mb.bin"
-row, clm = (1279, 4000)
+fname="bridge.bin"
+# row, clm = (1279, 4000)
+# row, clm = (5000, 3197)
+row, clm = (3840, 2400)
 
 # 120mb array size (10000, 3197) Stars seq  21512963 par => 21512963
 # 15mb qarray size (1279, 4000) Stars seq  2286663 par =>  2286679
@@ -43,15 +45,17 @@ test_chunk = comm.scatter(test_chunks,root=0)
 
 # print(test_chunk)
 
-fshift = np.fft.fftshift(np.fft.fft2(test_chunk))
 
-print(fshift.shape)
-magnitude_spectrum = 20*np.log(np.abs(fshift))
+# print(fshift.shape)
 
-print (" Magnitude array shape at Rank", rank,"is ", magnitude_spectrum.shape)
+for i in range(5):
+        fshift = np.fft.fftshift(np.fft.fft2(test_chunk))
+        magnitude_spectrum = 20*np.log(np.abs(fshift))
+        print (" Magnitude array shape at Rank", rank,"is ", magnitude_spectrum.shape)
+        del magnitude_spectrum, fshift
 
 if comm.rank == 0:
         w2 = MPI.Wtime()
-        print (" Total Magtitude ", magnitude_spectrum.shape)
+        # print (" Total Magtitude ", magnitude_spectrum.shape)
         print (" Total time taken", w2-w1 ,"sec")
-        del a
+        # del a

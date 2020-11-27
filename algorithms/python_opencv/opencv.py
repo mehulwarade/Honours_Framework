@@ -45,11 +45,7 @@ w1 = MPI.Wtime()
 total = np.array([0])
 test_chunk = comm.scatter(test_chunks,root=0)
 
-#image processing
-img_node_thresh =  cv2.adaptiveThreshold(test_chunk,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,59,0)
 
-star_count_node = ((200 < img_node_thresh)).sum()
-print (" Star count at Rank", rank,"is ", star_count_node)
 
 comm.Reduce(star_count_node,total,op=MPI.SUM,root=0) # Reduce to zero process
 

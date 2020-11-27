@@ -14,7 +14,7 @@ using namespace std::chrono;
 double max_range = 100000;
 int num_point = 50000;
 int num_cluster = 20;
-int max_iterations = 50;
+int max_iterations = 100;
 
 vector<Point> init_point(int num_point);
 vector<Cluster> init_cluster(int num_cluster);
@@ -68,8 +68,8 @@ int main() {
     printf("Starting iterate...\n");
 
     //The algorithm stops when iterations > max_iteration or when the clusters didn't move
-    while(conv && iterations < max_iterations){
-
+    // while(conv && iterations < max_iterations){
+    while(conv){
         iterations ++;
 
         compute_distance(points, clusters);
