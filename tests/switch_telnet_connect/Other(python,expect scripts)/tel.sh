@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOST='192.168.50.150 60000'
+HOST='192.168.5.23 60000'
 USER='admin'
 PASSWD='password'
 CMD='?'

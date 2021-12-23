@@ -32,7 +32,7 @@ Need MySQL server installed on local machine
     `=> node -v`
 
 `sudo apt install mariadb-server`
-    `=> sudo mysql_secure_installation`
+    `=> `
 
 
 

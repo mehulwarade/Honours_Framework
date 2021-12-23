@@ -18,7 +18,7 @@
     },
     "switch_telnet": {
         "__comment": "Telent credentials for connecting to Netgear Switch GS110TP",
-        "IP": "192.168.50.150",
+        "IP": "192.168.1.5",
         "port": 60000,
         "login": "admin",
         "password": "password",
@@ -28,7 +28,7 @@
         "__comment": "Local mysql database credentials",
         "host": "localhost",
         "user": "root",
-        "password": "qazwsxedc",
+        "password": "mcs",
         "db_name": "mytestdb"
     },
     "algorithm": {
