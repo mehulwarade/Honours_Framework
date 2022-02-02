@@ -1,4 +1,7 @@
 # Honours_Framework
+
+FEPAC including all the algorithms
+
 Framework for evaluation of Parallel Algorithms on Cluster
 
 
